@@ -1,0 +1,15 @@
+{
+  "short_name": "Faux",
+  "name": "Faux Blockchain Services",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "451x519",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
