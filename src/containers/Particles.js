@@ -24,11 +24,25 @@ export default class Particles extends Component {
     for (let i = 0; i < nPoints; i++) {
       const xPos = Math.round(Math.random() * width)
       const yPos = Math.round(Math.random() * height)
-      const newPoint = { x: xPos, xOrigin: xPos, y: yPos, yOrigin: yPos }
+      const radius = Math.round(Math.random() * 3)
+      const newPoint = {
+        r: radius,
+        x: xPos,
+        xOrigin: xPos,
+        y: yPos,
+        yOrigin: yPos
+      }
       points.push(newPoint)
+      Circle(newPoint)
     }
 
-    console.log(points)
+    function Circle(point) {
+      const ctx = canvas.getContext('2d')
+      ctx.beginPath()
+      ctx.arc(point.x, point.y, point.r, 0, 2 * Math.PI, false)
+      ctx.fillStyle = '#558AF2'
+      ctx.fill()
+    }
   }
 
   render() {
