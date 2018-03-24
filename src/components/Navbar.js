@@ -12,7 +12,6 @@ const NavbarWrapper = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: auto auto auto;
-  background: rgba(240,243,246, 0.8);
 `
 
 const NavbarColumn = styled.div`
@@ -22,6 +21,7 @@ const NavbarColumn = styled.div`
 `
 
 const NavbarLink = styled(NavLink)`
+  text-transform: uppercase;
   text-decoration: none;
   color: #404550;
   &:hover { color: rgba(85,138,242,1); }
@@ -40,13 +40,13 @@ const Navbar = () =>
       </NavbarLink>
     </NavbarColumn>
     <NavbarColumn>
-      <NavbarLink to='/two'>
-        <NavbarText>NavLink</NavbarText>
+      <NavbarLink to='/services'>
+        <NavbarText>Services</NavbarText>
       </NavbarLink>
     </NavbarColumn>
     <NavbarColumn>
-      <NavbarLink to='/three'>
-        <NavbarText>NavLink</NavbarText>
+      <NavbarLink to='/team'>
+        <NavbarText>Team</NavbarText>
       </NavbarLink>
     </NavbarColumn>
   </NavbarWrapper>

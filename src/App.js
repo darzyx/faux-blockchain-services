@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import Footer from './components/Footer'
 
 const AppWrapper = styled.div`
   position: relative;
@@ -20,6 +21,7 @@ class App extends Component {
         <AppWrapper>
           <Navbar />
           <Route exact path='/' component={Home}/>
+          <Footer />
         </AppWrapper>
       </BrowserRouter>
     )

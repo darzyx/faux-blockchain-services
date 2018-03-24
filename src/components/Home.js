@@ -13,12 +13,11 @@ const HomeWrapper = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: rgba(240,243,246, 1);
 `
 
 const Content = styled.div`
   position: absolute;
-  margin: 0;
+  margin: 10px 0 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -35,7 +34,7 @@ const Logo = styled.img`
 const Divider = styled.hr`
   width: 5vw;
   height: 2px;
-  background: rgba(85,138,242, 1);
+  background: ${props => props.hidden ? 'none' : 'rgba(85,138,242, 1)'};
   border: none;
 `
 
@@ -46,7 +45,6 @@ const Title = styled.h1`
   font-size: 3rem;
   border-radius: 50px;
   color: #404550;
-  background: rgba(240,243,246, 0.8);
 `
 
 const Description = styled.p`
