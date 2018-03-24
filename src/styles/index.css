@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Mina:700');
+@import url('https://fonts.googleapis.com/css?family=Mina:700|Open+Sans');
 
 * {
   box-sizing: border-box;
@@ -10,6 +10,10 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Mina', sans-serif;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
 }

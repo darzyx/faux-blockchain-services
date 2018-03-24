@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import Particles from '../containers/Particles'
 
+const logoImg = require('../media/logo.png')
+
 const HeaderWrapper = styled.div`
   position: relative;
   display: flex;
@@ -16,6 +18,8 @@ const HeaderWrapper = styled.div`
 
 const Content = styled.div`
   position: absolute;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,17 +27,51 @@ const Content = styled.div`
   text-align: center;
 `
 
+const Logo = styled.img`
+  width: 9.02vw;
+  height: 10.38vw;
+`
+
+const Divider = styled.hr`
+  width: 5vw;
+  height: 2px;
+  background: rgba(85,138,242, 1);
+  border: none;
+`
+
 const Title = styled.h1`
+  margin: 1vw 4vw 1vw 4vw;
+  padding: 0;
   line-height: 1;
   font-size: 3.5rem;
+  border-radius: 50px;
   color: rgba(85,138,242, 1);
+  background: rgba(240,243,246, 0.8);
+`
+
+const Description = styled.p`
+  margin: 1vw 4vw 1vw 4vw;
+  padding: 0;
+  line-height: 1.5;
+  max-width: 800px;
+  border-radius: 50px;
+  background: rgba(240,243,246, 0.8);
 `
 
 const Header = () =>
   <HeaderWrapper>
     <Particles />
     <Content>
+      <Logo src={logoImg} />
+      <Divider />
       <Title>Faux Blockchain Services</Title>
+      <Description>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur.
+      </Description>
     </Content>
   </HeaderWrapper>
 
