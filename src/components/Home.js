@@ -5,7 +5,7 @@ import Particles from '../containers/Particles'
 
 const logoImg = require('../media/logo.png')
 
-const HeaderWrapper = styled.div`
+const HomeWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -59,8 +59,8 @@ const Description = styled.p`
   background: rgba(240,243,246, 0.8);
 `
 
-const Header = () =>
-  <HeaderWrapper>
+const Home = () =>
+  <HomeWrapper>
     <Particles />
     <Content>
       <Logo src={logoImg} />
@@ -74,6 +74,6 @@ const Header = () =>
         velit esse cillum dolore eu fugiat nulla pariatur.
       </Description>
     </Content>
-  </HeaderWrapper>
+  </HomeWrapper>
 
-export default Header
+export default Home

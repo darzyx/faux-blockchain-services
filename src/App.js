@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import styled from 'styled-components'
 
 import Navbar from './components/Navbar'
-import Header from './components/Header'
+import Home from './components/Home'
 
 const AppWrapper = styled.div`
   position: relative;
@@ -19,7 +19,7 @@ class App extends Component {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <AppWrapper>
           <Navbar />
-          <Header />
+          <Route exact path='/' component={Home}/>
         </AppWrapper>
       </BrowserRouter>
     )

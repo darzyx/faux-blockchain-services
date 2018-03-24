@@ -35,8 +35,8 @@ const NavbarText = styled.h3`
 const Navbar = () =>
   <NavbarWrapper>
     <NavbarColumn>
-      <NavbarLink to='/one'>
-        <NavbarText>NavLink</NavbarText>
+      <NavbarLink to='/'>
+        <NavbarText>Home</NavbarText>
       </NavbarLink>
     </NavbarColumn>
     <NavbarColumn>
