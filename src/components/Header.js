@@ -28,8 +28,8 @@ const Content = styled.div`
 `
 
 const Logo = styled.img`
-  width: 9.02vw;
-  height: 10.38vw;
+  width: 9.02vh;
+  height: 10.38vh;
 `
 
 const Divider = styled.hr`
@@ -43,9 +43,9 @@ const Title = styled.h1`
   margin: 1vw 4vw 1vw 4vw;
   padding: 0;
   line-height: 1;
-  font-size: 3.5rem;
+  font-size: 3rem;
   border-radius: 50px;
-  color: rgba(85,138,242, 1);
+  color: #404550;
   background: rgba(240,243,246, 0.8);
 `
 
@@ -55,6 +55,7 @@ const Description = styled.p`
   line-height: 1.5;
   max-width: 800px;
   border-radius: 50px;
+  color: #404550;
   background: rgba(240,243,246, 0.8);
 `
 
