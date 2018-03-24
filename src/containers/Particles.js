@@ -32,8 +32,10 @@ export default class Particles extends Component {
     const ctx = canvas.getContext('2d')
 
     const points = [ ]
-    const nPoints = Math.round(width * height / 5000)
+    const nPoints = Math.round(width * height / 2500)
     const nClosest = 5
+
+    const spotlight = { x: width / 2, y: height / 2 }
 
     createPoints()
     setClosestPoints()
@@ -83,6 +85,22 @@ export default class Particles extends Component {
     function updateAnimationFrame() {
       ctx.clearRect(0, 0, width, height)
       for (let i = 0; i < nPoints; i++) {
+        const spotlightDist = getDistance(spotlight, points[i])
+
+        if (spotlightDist < 100) {
+          points[i].pOpacity = 0.75
+          points[i].lOpacity = 0.1
+        } else if (spotlightDist < 200) {
+          points[i].pOpacity = 0.5
+          points[i].lOpacity = 0.075
+        } else if (spotlightDist < 300) {
+          points[i].pOpacity = 0.25
+          points[i].lOpacity = 0.05
+        } else {
+          points[i].pOpacity = 0
+          points[i].lOpacity = 0
+        }
+
         drawLines(points[i])
         drawCircle(points[i])
       }
@@ -101,7 +119,7 @@ export default class Particles extends Component {
     function drawCircle(point) {
       ctx.beginPath()
       ctx.arc(point.x, point.y, point.r, 0, 2 * Math.PI, false)
-      ctx.fillStyle = 'rgba(85,138,242, 0.75)'
+      ctx.fillStyle = 'rgba(85,138,242, ' + point.pOpacity + ')'
       ctx.fill()
     }
 
@@ -110,7 +128,7 @@ export default class Particles extends Component {
         ctx.beginPath()
         ctx.moveTo(point.x, point.y)
         ctx.lineTo(point.closest[i].x, point.closest[i].y)
-        ctx.strokeStyle = 'rgba(85,138,242, 0.1)'
+        ctx.strokeStyle = 'rgba(85,138,242, ' + point.lOpacity + ')'
         ctx.stroke()
       }
     }
