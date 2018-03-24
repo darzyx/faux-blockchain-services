@@ -63,7 +63,7 @@ const Home = () =>
   <HomeWrapper>
     <Particles />
     <Content>
-      <Logo src={logoImg} />
+      <Logo alt='company logo' src={logoImg} />
       <Divider />
       <Title>Faux Blockchain Services</Title>
       <Description>
