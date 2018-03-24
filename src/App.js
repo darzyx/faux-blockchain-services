@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-import Particles from './containers/Particles'
+import Header from './components/Header'
 
 class App extends Component {
   render() {
     return (
       <div id='app'>
-        <Particles />
+        <Header />
       </div>
     )
   }

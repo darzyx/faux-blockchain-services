@@ -1,5 +1,15 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import { TweenLite, Circ } from 'gsap'
+
+const Canvas = styled.canvas`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #F0F3F6;
+`
 
 export default class Particles extends Component {
   constructor(props) {
@@ -74,8 +84,8 @@ export default class Particles extends Component {
     function updateAnimationFrame() {
       ctx.clearRect(0, 0, width, height)
       for (let i = 0; i < nPoints; i++) {
-        drawCircle(points[i])
         drawLines(points[i])
+        drawCircle(points[i])
       }
       requestAnimationFrame(updateAnimationFrame)
     }
@@ -101,8 +111,7 @@ export default class Particles extends Component {
         ctx.beginPath()
         ctx.moveTo(point.x, point.y)
         ctx.lineTo(point.closest[i].x, point.closest[i].y)
-        ctx.strokeStyle = '#558AF2'
-        ctx.lineWidth = 0.5
+        ctx.strokeStyle = '#A6B7D8'
         ctx.stroke()
       }
     }
@@ -114,7 +123,7 @@ export default class Particles extends Component {
 
   render() {
     return (
-      <canvas id='particles'></canvas>
+      <Canvas id='particles' />
     )
   }
 }
