@@ -23,11 +23,11 @@ export default class Particles extends Component {
     const ctx = canvas.getContext('2d')
 
     const points = [ ]
-    const nPoints = Math.round(width * height / 10000)
+    const nPoints = Math.round(width * height / 5000)
     for (let i = 0; i < nPoints; i++) {
       const xPos = Math.round(Math.random() * width)
       const yPos = Math.round(Math.random() * height)
-      const radius = Math.round(Math.random() * 3)
+      const radius = Math.round(Math.random() * 3) + 1
       const newPoint = {
         r: radius,
         x: xPos,
@@ -36,6 +36,34 @@ export default class Particles extends Component {
         yOrigin: yPos
       }
       points.push(newPoint)
+    }
+
+    const nClosest = 5
+    for (let i = 0; i < nPoints; i++) {
+      const p1 = points[i]
+      const closest = [ ]
+
+      for (let j = 0; j < nPoints; j++) {
+        const p2 = points[j]
+
+        if (p1 !== p2) {
+          if (closest.length !== nClosest) {
+            closest.push(p2)
+          }
+          else {
+            const p2Dist = getDistance(p1, p2)
+
+            for (let k = 0; k < nClosest; k++) {
+              if (p2Dist < getDistance(p1, closest[k])) {
+                closest[k] = p2
+                break
+              }
+            }
+          }
+        }
+      }
+
+      p1.closest = closest
     }
 
     initPointsTweening()
@@ -47,7 +75,10 @@ export default class Particles extends Component {
 
     function updateAnimationFrame() {
       ctx.clearRect(0, 0, width, height)
-      for (let i = 0; i < nPoints; i++) { drawCircle(points[i]) }
+      for (let i = 0; i < nPoints; i++) {
+        drawCircle(points[i])
+        drawLines(points[i])
+      }
       requestAnimationFrame(updateAnimationFrame)
     }
 
@@ -65,6 +96,21 @@ export default class Particles extends Component {
       ctx.arc(point.x, point.y, point.r, 0, 2 * Math.PI, false)
       ctx.fillStyle = '#558AF2'
       ctx.fill()
+    }
+
+    function drawLines(point) {
+      for (let i = 0; i < nClosest; i++) {
+        ctx.beginPath()
+        ctx.moveTo(point.x, point.y)
+        ctx.lineTo(point.closest[i].x, point.closest[i].y)
+        ctx.strokeStyle = '#558AF2'
+        ctx.lineWidth = 0.5
+        ctx.stroke()
+      }
+    }
+
+    function getDistance(a, b) {
+      return Math.sqrt((b.x - a.x) ** 2 + (b.y - a.y) ** 2)
     }
   }
 
