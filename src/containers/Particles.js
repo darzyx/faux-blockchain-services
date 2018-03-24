@@ -8,7 +8,6 @@ const Canvas = styled.canvas`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #F0F3F6;
 `
 
 export default class Particles extends Component {
@@ -102,7 +101,7 @@ export default class Particles extends Component {
     function drawCircle(point) {
       ctx.beginPath()
       ctx.arc(point.x, point.y, point.r, 0, 2 * Math.PI, false)
-      ctx.fillStyle = '#558AF2'
+      ctx.fillStyle = 'rgba(85,138,242, 0.75)'
       ctx.fill()
     }
 
@@ -111,7 +110,7 @@ export default class Particles extends Component {
         ctx.beginPath()
         ctx.moveTo(point.x, point.y)
         ctx.lineTo(point.closest[i].x, point.closest[i].y)
-        ctx.strokeStyle = '#A6B7D8'
+        ctx.strokeStyle = 'rgba(85,138,242, 0.1)'
         ctx.stroke()
       }
     }

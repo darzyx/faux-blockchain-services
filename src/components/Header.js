@@ -11,17 +11,29 @@ const HeaderWrapper = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background: rgba(240,243,246, 1);
 `
 
 const Content = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`
+
+const Title = styled.h1`
+  line-height: 1;
+  font-size: 3.5rem;
+  color: rgba(85,138,242, 1);
 `
 
 const Header = () =>
   <HeaderWrapper>
     <Particles />
     <Content>
-      <h1>Faux Blockchain Services</h1>
+      <Title>Faux Blockchain Services</Title>
     </Content>
   </HeaderWrapper>
 

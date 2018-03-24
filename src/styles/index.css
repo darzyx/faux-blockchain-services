@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Mina:700');
+
 * {
   box-sizing: border-box;
 }
@@ -6,4 +8,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+h1 {
+  font-family: 'Mina', sans-serif;
 }
