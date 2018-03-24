@@ -24,50 +24,48 @@ export default class Particles extends Component {
 
     const points = [ ]
     const nPoints = Math.round(width * height / 5000)
-    for (let i = 0; i < nPoints; i++) {
-      const xPos = Math.round(Math.random() * width)
-      const yPos = Math.round(Math.random() * height)
-      const radius = Math.round(Math.random() * 3) + 1
-      const newPoint = {
-        r: radius,
-        x: xPos,
-        xOrigin: xPos,
-        y: yPos,
-        yOrigin: yPos
+    const nClosest = 5
+
+    createPoints()
+    setClosestPoints()
+    initPointsTweening()
+    updateAnimationFrame()
+
+    function createPoints() {
+      for (let i = 0; i < nPoints; i++) {
+        const x = Math.round(Math.random() * width)
+        const y = Math.round(Math.random() * height)
+        const r = Math.round(Math.random() * 3) + 1
+        const newPoint = { x, y, r, xOrigin: x, yOrigin: y }
+        points.push(newPoint)
       }
-      points.push(newPoint)
     }
 
-    const nClosest = 5
-    for (let i = 0; i < nPoints; i++) {
-      const p1 = points[i]
-      const closest = [ ]
+    function setClosestPoints() {
+      for (let i = 0; i < nPoints; i++) {
+        const p1 = points[i]
+        const closest = [ ]
 
-      for (let j = 0; j < nPoints; j++) {
-        const p2 = points[j]
+        for (let j = 0; j < nPoints; j++) {
+          const p2 = points[j]
 
-        if (p1 !== p2) {
-          if (closest.length !== nClosest) {
-            closest.push(p2)
-          }
-          else {
-            const p2Dist = getDistance(p1, p2)
+          if (p1 !== p2) {
+            if (closest.length !== nClosest) { closest.push(p2) }
+            else {
+              const p2Dist = getDistance(p1, p2)
 
-            for (let k = 0; k < nClosest; k++) {
-              if (p2Dist < getDistance(p1, closest[k])) {
-                closest[k] = p2
-                break
+              for (let k = 0; k < nClosest; k++) {
+                if (p2Dist < getDistance(p1, closest[k])) {
+                  closest[k] = p2
+                  break
+                }
               }
             }
           }
         }
+        p1.closest = closest
       }
-
-      p1.closest = closest
     }
-
-    initPointsTweening()
-    updateAnimationFrame()
 
     function initPointsTweening() {
       for (let i = 0; i < nPoints; i++) { tweenPoint(points[i]) }
