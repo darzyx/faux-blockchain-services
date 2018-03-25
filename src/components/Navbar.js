@@ -8,7 +8,7 @@ const NavbarWrapper = styled.div`
   top: 0;
   width: 100vw;
   max-width: 500px;
-  height: 15vh;
+  height: 10vh;
   display: grid;
   align-items: center;
   grid-template-columns: auto auto auto;

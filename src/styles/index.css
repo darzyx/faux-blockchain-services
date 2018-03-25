@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Mina:700|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Mina:700|Oxygen:300');
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: calc(12px + 0.5vw);
 }
 
 body {
@@ -15,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oxygen', sans-serif;
 }
 
 svg {

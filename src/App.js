@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import Services from './components/Services'
 import Footer from './components/Footer'
 
 const AppWrapper = styled.div`
@@ -21,6 +22,7 @@ class App extends Component {
         <AppWrapper>
           <Navbar />
           <Route exact path='/' component={Home}/>
+          <Route exact path='/services' component={Services}/>
           <Footer />
         </AppWrapper>
       </BrowserRouter>
