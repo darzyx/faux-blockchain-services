@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import FacebookSVG from './FacebookSVG'
 import TwitterSVG from './TwitterSVG'
@@ -8,27 +9,38 @@ import LinkedInSVG from './LinkedInSVG'
 const logoImg = require('../media/logo.png')
 
 const FooterWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
+  background: #202530;
 `
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding: 5vh 5vw 5vh 5vw;
   width: 100vw;
-  padding: 4vw;
   color: white;
-  background: #202530;
+  @media (min-width: 700px) {
+    grid-template-columns: repeat(4, 25%);
+  }
+  @media (max-width: 699px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(auto-fill, 1fr);
+  }
 `
 
 const Column = styled.div`
   text-align: left;
-  @media (max-width: 600px) {
+  @media (max-width: 450px) {
     text-align: center;
   }
+`
+
+const FooterLink = styled(Link)`
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #AAB3C1;
+  &:hover { color: #558AF2; }
 `
 
 const Logo = styled.img`
@@ -36,16 +48,23 @@ const Logo = styled.img`
   height: 5.19vh;
 `
 
-const Footing = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100vw;
-  height: 50px;
-  padding: 10px;
-  font-size: 0.8rem;
+const Divider = styled.hr`
+  width: 90vw;
+  height: 1px;
   color: white;
-  background: #101520;
+  background: white;
+  border: none;
+`
+
+const Footing = styled.div`
+  width: 100vw;
+  padding: 1vh 5vw 9vh 5vw;
+  font-size: 0.7rem;
+  color: #AAB3C1;
+  text-align: right;
+  @media (max-width: 450px) {
+    text-align: center;
+  }
 `
 
 const Footer = () =>
@@ -57,26 +76,36 @@ const Footer = () =>
       </Column>
       <Column>
         <h4>ABOUT</h4>
-        <p>Contact Us</p>
-        <p>Investors</p>
-        <p>Careers</p>
-        <p>Team</p>
-        <p>FAQ</p>
+        <FooterLink to='/'><p>Contact Us</p></FooterLink>
+        <FooterLink to='/'><p>Services</p></FooterLink>
+        <FooterLink to='/'><p>Careers</p></FooterLink>
+        <FooterLink to='/'><p>Team</p></FooterLink>
+        <FooterLink to='/'><p>FAQ</p></FooterLink>
       </Column>
       <Column>
         <h4>UPDATES</h4>
-        <p>Announcements</p>
-        <p>Subscribe</p>
-        <p>Blog</p>
+        <FooterLink to='/'><p>Announcements</p></FooterLink>
+        <FooterLink to='/'><p>Subscribe</p></FooterLink>
+        <FooterLink to='/'><p>Blog</p></FooterLink>
       </Column>
       <Column>
-        <FacebookSVG />
-        <TwitterSVG />
-        <LinkedInSVG />
+        <h4>FOLLOW</h4>
+        <span>
+          <FacebookSVG />
+          <TwitterSVG />
+          <LinkedInSVG />
+        </span>
       </Column>
     </Grid>
+    <Divider />
     <Footing>
-      <p>Copyright © 2018 Jose Dario Sanchez.</p>
+      <p>
+        Terms |
+        Privacy |
+        support@fauxblockchain.com |
+        (000) 000-0000 |
+        © Faux Blockchain Services
+      </p>
     </Footing>
   </FooterWrapper>
 

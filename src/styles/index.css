@@ -7,7 +7,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgba(240,243,246, 1);
+  background: #F0F3F6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,5 +19,12 @@ p {
 }
 
 svg {
-  margin: 20px;
+  margin-right: 2vw;
+  cursor: pointer;
+}
+
+@media (max-width: 699px) {
+  svg {
+    margin-left: 2vw;
+  }
 }
