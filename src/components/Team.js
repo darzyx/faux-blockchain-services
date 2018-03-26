@@ -50,6 +50,15 @@ const Role = styled.p`
   padding: 0;
 `
 
+const data = [
+  { name: 'Person One', role: 'Founder and CEO', img: portrait1 },
+  { name: 'Person Two', role: 'Chief Operating Officer', img: portrait2 },
+  { name: 'Person Three', role: 'Chief Technology Officer', img: portrait3 },
+  { name: 'Person Four', role: 'Chief Financial Officer', img: portrait4 },
+  { name: 'Person Five', role: 'Ethereum Architect', img: portrait5 },
+  { name: 'Person Six', role: 'Chief Communications Officer', img: portrait6 }
+]
+
 const Team = () =>
   <TeamWrapper>
     <Header>
@@ -58,36 +67,15 @@ const Team = () =>
       </center>
     </Header>
     <Grid>
-      <Column>
-        <Portrait src={portrait1} />
-        <Name>Person One</Name>
-        <Role>Founder and CEO</Role>
-      </Column>
-      <Column>
-        <Portrait src={portrait2} />
-        <Name>Person Two</Name>
-        <Role>Chief Operating Officer</Role>
-      </Column>
-      <Column>
-        <Portrait src={portrait3} />
-        <Name>Person Three</Name>
-        <Role>Chief Technology Officer</Role>
-      </Column>
-      <Column>
-        <Portrait src={portrait4} />
-        <Name>Person Four</Name>
-        <Role>Chief Financial Officer</Role>
-      </Column>
-      <Column>
-        <Portrait src={portrait5} />
-        <Name>Person Five</Name>
-        <Role>Ethereum Architect</Role>
-      </Column>
-      <Column>
-        <Portrait src={portrait6} />
-        <Name>Person Six</Name>
-        <Role>Chief Communications Officer</Role>
-      </Column>
+    {
+      data.map((item, key) =>
+        <Column key={key}>
+          <Portrait src={item.img} />
+          <Name>{item.name}</Name>
+          <Role>{item.role}</Role>
+        </Column>
+      )
+    }
     </Grid>
   </TeamWrapper>
 
