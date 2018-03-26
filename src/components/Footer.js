@@ -15,7 +15,7 @@ const FooterWrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  padding: 5vh 5vw 5vh 5vw;
+  padding: 5vh 15vw 5vh 15vw;
   width: 100vw;
   color: white;
   @media (min-width: 700px) {
@@ -24,14 +24,14 @@ const Grid = styled.div`
   @media (max-width: 699px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
-  @media (max-width: 450px) {
+  @media (max-width: 600px) {
     grid-template-columns: repeat(auto-fill, 1fr);
   }
 `
 
 const Column = styled.div`
   text-align: left;
-  @media (max-width: 450px) {
+  @media (max-width: 699px) {
     text-align: center;
   }
 `
@@ -49,7 +49,7 @@ const Logo = styled.img`
 `
 
 const Divider = styled.hr`
-  width: 90vw;
+  width: 70vw;
   height: 1px;
   color: white;
   background: white;
@@ -58,11 +58,11 @@ const Divider = styled.hr`
 
 const Footing = styled.div`
   width: 100vw;
-  padding: 1vh 5vw 9vh 5vw;
+  padding: 1vh 15vw 5vh 15vw;
   font-size: 0.7rem;
   color: #AAB3C1;
   text-align: right;
-  @media (max-width: 450px) {
+  @media (max-width: 699px) {
     text-align: center;
   }
 `
