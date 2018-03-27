@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import styled from 'styled-components'
 
-import Navbar from './components/Navbar'
+import Menu from './components/Menu'
 import Home from './components/Home'
 import Services from './components/Services'
 import Team from './components/Team'
@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <AppWrapper>
-          <Navbar />
+          <Menu />
           <Route exact path='/' component={Home}/>
           <Route exact path='/services' component={Services}/>
           <Route exact path='/team' component={Team}/>

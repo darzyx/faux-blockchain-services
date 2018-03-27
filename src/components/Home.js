@@ -23,6 +23,7 @@ const Main = styled.div`
 
 const Content = styled.div`
   position: absolute;
+  max-width: 800px;
   margin: 10px 0 0 0;
   padding: 0;
   display: flex;

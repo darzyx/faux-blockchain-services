@@ -15,7 +15,7 @@ const FooterWrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  padding: 5vh 15vw 5vh 15vw;
+  padding: 3vh 10vw 3vh 10vw;
   width: 100vw;
   color: white;
   @media (min-width: 700px) {
@@ -49,7 +49,7 @@ const Logo = styled.img`
 `
 
 const Divider = styled.hr`
-  width: 70vw;
+  width: 80vw;
   height: 1px;
   color: white;
   background: white;
@@ -58,7 +58,7 @@ const Divider = styled.hr`
 
 const Footing = styled.div`
   width: 100vw;
-  padding: 1vh 15vw 5vh 15vw;
+  padding: 1vh 10vw 5vh 10vw;
   font-size: 0.7rem;
   color: #AAB3C1;
   text-align: right;
