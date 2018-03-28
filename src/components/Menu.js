@@ -42,8 +42,8 @@ const Logo = styled.img`
 
 const MenuLink = styled(NavLink)`
   text-decoration: none;
-  color: #404550;
-  &:hover { color: rgba(85,138,242,1); }
+  color: #a4adb6;
+  &:hover { color: #FFF; }
 `
 
 const Menu = () =>

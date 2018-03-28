@@ -10,7 +10,7 @@ const logoImg = require('../media/logo.png')
 
 const FooterWrapper = styled.div`
   width: 100vw;
-  background: #202530;
+  background: linear-gradient(to bottom right, #2b3548, #0d1222);
 `
 
 const Grid = styled.div`
@@ -39,8 +39,8 @@ const Column = styled.div`
 const FooterLink = styled(Link)`
   font-size: 0.9rem;
   text-decoration: none;
-  color: #AAB3C1;
-  &:hover { color: #558AF2; }
+  color: #a4adb6;
+  &:hover { color: #FFF; }
 `
 
 const Logo = styled.img`

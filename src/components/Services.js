@@ -11,19 +11,28 @@ const ServicesWrapper = styled.div`
 const Main = styled.div`
   width: 100vw;
   padding: 15vh 15vw 5vh 15vw;
+  background: linear-gradient(to bottom right, #2b3548, #0d1222);
 `
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 33.3%);
   padding: 0 15vw 5vh 15vw;
-  background: #A6B7D8;
+  background: #f9f9fb;
   @media (max-width: 799px) {
     grid-template-columns: repeat(auto-fill, 50%);
   }
   @media (max-width: 450px) {
     grid-template-columns: repeat(auto-fill, 100%);
   }
+`
+
+const Title = styled.h1`
+  color: #edf6fe;
+`
+
+const Paragraph = styled.p`
+  color: #e5eef5;
 `
 
 const Column = styled.div`
@@ -33,8 +42,8 @@ const Column = styled.div`
 const Services = () =>
   <ServicesWrapper>
     <Main>
-      <h1>Services</h1>
-      <p>
+      <Title>Services</Title>
+      <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -42,8 +51,8 @@ const Services = () =>
         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
         cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
         est laborum.
-      </p>
-      <p>
+      </Paragraph>
+      <Paragraph>
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
         doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
         inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
@@ -56,7 +65,7 @@ const Services = () =>
         laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
         iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
         consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-      </p>
+      </Paragraph>
     </Main>
     <Grid>
       <Column>

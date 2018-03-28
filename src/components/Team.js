@@ -16,6 +16,8 @@ const TeamWrapper = styled.div`
 
 const Header = styled.div`
   padding: 15vh 15vw 5vh 15vw;
+  color: #FFF;
+  background: linear-gradient(to bottom right, #2b3548, #0d1222);
 `
 
 const Grid = styled.div`
@@ -23,7 +25,7 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   margin: 0;
   padding: 5vh 15vw 5vh 15vw;
-  background: #A6B7D8;
+  background: #f9f9fb;
 `
 
 const Column = styled.div`
@@ -43,11 +45,13 @@ const Portrait = styled.img`
 const Name = styled.h4`
   margin: 10px 0 5px 0;
   padding: 0;
+  color: #2e3b4c;
 `
 
 const Role = styled.p`
   margin: 5px 0 25px 0;
   padding: 0;
+  color: #a0a4ad;
 `
 
 const data = [

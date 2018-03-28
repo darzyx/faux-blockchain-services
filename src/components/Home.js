@@ -3,15 +3,14 @@ import styled from 'styled-components'
 
 import Particles from '../containers/Particles'
 
-const logoImg = require('../media/logo.png')
-const blockchainImg = require('../media/blockchain.png')
+const globeImg = require('../media/globe.png')
 
 const HomeWrapper = styled.div`
   width: 100vw;
   min-height: 100vh;
 `
 
-const Main = styled.div`
+const Banner = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -19,9 +18,10 @@ const Main = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background: linear-gradient(to bottom right, #2b3548, #0d1222);
 `
 
-const Content = styled.div`
+const Header = styled.div`
   position: absolute;
   max-width: 800px;
   margin: 10px 0 0 0;
@@ -33,43 +33,30 @@ const Content = styled.div`
   text-align: center;
 `
 
-const Logo = styled.img`
-  width: 9.02vh;
-  height: 10.38vh;
-`
-
-const Divider = styled.hr`
-  width: 5vw;
-  height: 2px;
-  background: ${props => props.hidden ? 'none' : 'rgba(85,138,242, 1)'};
-  border: none;
-`
-
 const Title = styled.h1`
   margin: 1vw 4vw 1vw 4vw;
   padding: 0;
   line-height: 1;
   font-size: 3rem;
   border-radius: 50px;
-  color: #404550;
+  color: #edf6fe;
 `
 
-const Description = styled.p`
+const Subtitle = styled.p`
   margin: 1vw 4vw 1vw 4vw;
   padding: 0;
   line-height: 1.5;
   max-width: 800px;
   border-radius: 50px;
-  color: #404550;
-  background: rgba(240,243,246, 0.8);
+  color: #e5eef5;
 `
 
-const Grid = styled.div`
+const Section = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 50%);
   padding: 5vh 15vw 5vh 15vw;
-  color: #404550;
-  background: #A6B7D8;
+  color: #2e3b4c;
+  background: #f9f9fb;
   @media (max-width: 650px) {
     grid-template-columns: repeat(auto-fill, 100%);
   }
@@ -82,6 +69,10 @@ const Details = styled.div`
   min-height: 30vw;
 `
 
+const Paragraph = styled.p`
+  color: #a0a4ad;
+`
+
 const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -90,45 +81,43 @@ const ImageWrapper = styled.div`
   min-height: 30vw;
 `
 
-const Image = styled.img`
+const Globe = styled.img`
   min-width: 200px;
   width: 30vw;
-  min-height: 150px;
-  height: 22.5vw;
+  min-height: 200px;
+  height: 30vw;
 `
 
 const Home = () =>
   <HomeWrapper>
-    <Main>
+    <Banner>
       <Particles />
-      <Content>
-        <Logo alt='company logo' src={logoImg} />
-        <Divider />
-        <Title>Faux Blockchain Services</Title>
-        <Description>
+      <Header>
+        <Title>Blockchain Solutions for the Modern World</Title>
+        <Subtitle>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
           commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
           velit esse cillum dolore eu fugiat nulla pariatur.
-        </Description>
-      </Content>
-    </Main>
-    <Grid>
+        </Subtitle>
+      </Header>
+    </Banner>
+    <Section>
       <Details>
         <h1>Nulla Pariatur</h1>
-        <p>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
           commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
           velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
+        </Paragraph>
       </Details>
       <ImageWrapper>
-        <Image src={blockchainImg} />
+        <Globe src={globeImg} />
       </ImageWrapper>
-    </Grid>
+    </Section>
   </HomeWrapper>
 
 export default Home
