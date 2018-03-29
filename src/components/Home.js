@@ -101,6 +101,7 @@ const Section2 = styled.div`
 const ItemHeading = styled.h3`
   margin-bottom: 0;
   padding-bottom: 0;
+  color: #a2a7af;
 `
 
 const ItemDescription = styled.p`

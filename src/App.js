@@ -6,6 +6,7 @@ import Menu from './components/Menu'
 import Home from './components/Home'
 import Services from './components/Services'
 import Team from './components/Team'
+import Roadmap from './components/Roadmap'
 import Footer from './components/Footer'
 
 const AppWrapper = styled.div`
@@ -25,6 +26,7 @@ class App extends Component {
           <Route exact path='/' component={Home}/>
           <Route exact path='/services' component={Services}/>
           <Route exact path='/team' component={Team}/>
+          <Route exact path='/roadmap' component={Roadmap}/>
           <Footer />
         </AppWrapper>
       </BrowserRouter>

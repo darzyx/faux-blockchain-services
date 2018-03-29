@@ -64,7 +64,7 @@ const Menu = () =>
         <MenuLink to='/team'><p>Team</p></MenuLink>
       </MenuItem>
       <MenuItem>
-        <MenuLink to='/'><p>Roadmap</p></MenuLink>
+        <MenuLink to='/roadmap'><p>Roadmap</p></MenuLink>
       </MenuItem>
     </MenuRight>
   </MenuWrapper>
